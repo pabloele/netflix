@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Main />
-      <Row title="Up Coming" fetchURL={requests.requestUpcomming} />
-      <Row title="Trendig" fetchURL={requests.requestTrending} />
-      <Row title="Top rated" fetchURL={requests.requestTopRated} />
-      <Row title="Popular" fetchURL={requests.requestPopular} />
+      <Row rowID="1" title="Up Coming" fetchURL={requests.requestUpcomming} />
+      <Row rowID="2" title="Trendig" fetchURL={requests.requestTrending} />
+      <Row rowID="3" title="Top rated" fetchURL={requests.requestTopRated} />
+      <Row rowID="4" title="Popular" fetchURL={requests.requestPopular} />
     </>
   );
 }

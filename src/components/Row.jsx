@@ -1,7 +1,10 @@
 import React from "react";
 import axios from "axios";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useState, useEffect } from "react";
-export default function Row({ title, fetchURL }) {
+
+import Movie from "./movie";
+export default function Row({ title, fetchURL, rowID }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -11,42 +14,40 @@ export default function Row({ title, fetchURL }) {
     });
   }, [fetchURL]);
 
+  const slideLeft = () => {
+    var slider = document.getElementById("slider" + rowID);
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+
+  const slideRight = () => {
+    var slider = document.getElementById("slider" + rowID);
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
+
   return (
     <div>
-      {/* {movies
-        ? console.log(
-            `https://image.tmdb.org/t/p/w500${movies[1]?.backdrop_path}`
-          )
-        : console.log("nada")} */}
-
       <h2 className="text-white font-bold md:text-xl p-4" title="">
         {title ? title : null}
       </h2>
-      <div className="relative flex items-center">
-        <div id={"slider"}>
-          {/* <img
-            src={`https://image.tmdb.org/t/p/w500/${movies[0].backdrop_path}`}
-            alt={"/"}
-          /> */}
+      <div className="relative flex items-center group">
+        <MdChevronLeft
+          className="left-0 bg-white rounded-full absolute opacity-50 hover:opacity-80 cursor-pointer z-10 hidden group-hover:block"
+          size={40}
+          onClick={slideLeft}
+        />
 
+        <div
+          id={"slider" + rowID}
+          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
           {movies?.map((item, id) => (
-            <div
-              className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2"
-              key={id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${item?.backdrop_path}`}
-                alt={item.title ? item.title : "img"}
-              />
-              <div
-                className="absolute top-0 left-0 w-full h-full hover: bg-black/80 opacity-0 hover:opacity-100
-               text-white">
-                <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center ">
-                  {item?.title}
-                </p>
-              </div>
-            </div>
+            <Movie key={id} item={item} />
           ))}
         </div>
+        <MdChevronRight
+          className="right-0 bg-white rounded-full absolute opacity-50 hover:opacity-80 cursor-pointer z-10 hidden group-hover:block"
+          size={40}
+          onClick={slideRight}
+        />
       </div>
     </div>
   );
