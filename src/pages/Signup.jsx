@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import imgBack from "../../src/signupbackground.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, signUp } = UserAuth();
-
+  const navigate = useNavigate();
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
       await signUp(email, password);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
     }
