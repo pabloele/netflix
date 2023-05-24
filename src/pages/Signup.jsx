@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import imgBack from "../../src/signupbackground.jpg";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 export default function Signup() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, signUp } = UserAuth();
+
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signUp(email, password);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <>
       <div className="w-full h-screen">
@@ -9,14 +23,18 @@ export default function Signup() {
           <div className="max-w-[450px] h-[550px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
-              <form className="w-full flex flex-col py-4">
+              <form
+                onSubmit={handlesubmit}
+                className="w-full flex flex-col py-4">
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="email"
                   placeholder="Email"
                   autoComplete="email"
                 />
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="password"
                   placeholder="Password"
@@ -45,12 +63,6 @@ export default function Signup() {
           </div>
         </div>
         <div className="absolute w-full h-full bg-black/60"></div>
-        <img
-          className="hidden sm:block w-full h-full object-cover"
-          src={imgBack}
-          alt="signup background"
-        />
-
         <img
           className="hidden sm:block w-full h-full object-cover"
           src={imgBack}

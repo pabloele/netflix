@@ -8,7 +8,7 @@ export default function Login() {
         <div className="fixed w-full px-4 py-24 z-50">
           <div className="max-w-[450px] h-[550px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] mx-auto py-16">
-              <h1 className="text-3xl font-bold">Sign Up</h1>
+              <h1 className="text-3xl font-bold">Sign In</h1>
               <form className="w-full flex flex-col py-4">
                 <input
                   className="p-3 my-2 bg-gray-700 rounded"
@@ -43,12 +43,6 @@ export default function Login() {
           </div>
         </div>
         <div className="absolute w-full h-full bg-black/60"></div>
-        <img
-          className="hidden sm:block w-full h-full object-cover"
-          src={imgBack}
-          alt="signup background"
-        />
-
         <img
           className="hidden sm:block w-full h-full object-cover"
           src={imgBack}
