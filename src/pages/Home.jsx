@@ -4,7 +4,6 @@ import Row from "../components/Row";
 import requests from "../request";
 
 export default function Home() {
-  console.log(requests.requestUpcomming);
   return (
     <>
       <Main />
