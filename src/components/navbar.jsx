@@ -23,7 +23,7 @@ export default function Navbar() {
       </Link>
       {user ? (
         <div>
-          <Link to="/login">
+          <Link to="/account">
             <button className="text-white pr-4">Account</button>
           </Link>
 

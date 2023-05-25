@@ -15,7 +15,7 @@ export default function Movie({ item }) {
       setLike(!like);
       setSaved(true);
       await updateDoc(movieID, {
-        savedSmovies: arrayUnion({
+        savedMovies: arrayUnion({
           id: item.id,
           title: item.title,
           img: item.backdrop_path,
