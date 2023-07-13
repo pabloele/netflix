@@ -50,7 +50,7 @@ export default function Signup() {
                     <input className="mr-2" type="checkbox" />
                     Recordarme
                   </p>
-                  <p>Nececitas ayuda?</p>
+                  <p>Necesitas ayuda?</p>
                 </div>
                 <p className="py-8 ">
                   <span className="text-gray-600 mr-4 ">

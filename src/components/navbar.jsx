@@ -32,18 +32,18 @@ export default function Navbar() {
             onClick={handleLogOut}
             className="text-white bg-red-600 px-6 py-2 rounded cursor-pointer"
           >
-            Cerrar sesión
+            Salir
           </button>
         </div>
       ) : (
         <div>
           <Link to="/login">
-            <button className="text-white pr-4">Iniciar sesión</button>
+            <button className="text-white pr-4">Entrar</button>
           </Link>
 
           <Link to="/signup">
             <button className="text-white bg-red-600 px-6 py-2 rounded cursor-pointer">
-              Crear una cuenta
+              Registro
             </button>
           </Link>
         </div>

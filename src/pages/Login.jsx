@@ -54,13 +54,13 @@ export default function Login() {
                     <input className="mr-2" type="checkbox" />
                     Recordarme
                   </p>
-                  <p>Nececitas ayuda?</p>
+                  <p>Necesitas ayuda?</p>
                 </div>
                 <p className="py-8 ">
                   <span className="text-gray-600 mr-4 ">
                     Nuevo/a en NETFLIX?
                   </span>
-                  <Link to="/login" className="cursor-pointer">
+                  <Link to="/signup" className="cursor-pointer">
                     Crear una cuenta
                   </Link>
                 </p>
