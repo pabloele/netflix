@@ -26,7 +26,8 @@ export default function Signup() {
               <h1 className="text-3xl font-bold">Sign Up</h1>
               <form
                 onSubmit={handlesubmit}
-                className="w-full flex flex-col py-4">
+                className="w-full flex flex-col py-4"
+              >
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-700 rounded"
@@ -42,21 +43,21 @@ export default function Signup() {
                   autoComplete="current-password"
                 />
                 <button className="bg-red-600 py-3 my-6 rounded font-bold">
-                  Sign Up
+                  Crear una cuenta
                 </button>
                 <div className="flex justify-between items-center text-sm text-gray-600">
                   <p>
                     <input className="mr-2" type="checkbox" />
-                    Remember me
+                    Recordarme
                   </p>
-                  <p>Need help?</p>
+                  <p>Nececitas ayuda?</p>
                 </div>
                 <p className="py-8 ">
                   <span className="text-gray-600 mr-4 ">
-                    Alredy subscribed to NETFLIX?
+                    Ya estás suscripto a NETFLIX?
                   </span>
                   <Link to="/login" className="cursor-pointer">
-                    Sign in
+                    Entrar
                   </Link>
                 </p>
               </form>

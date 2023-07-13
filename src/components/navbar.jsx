@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const { user, logOut } = UserAuth();
+
   const navigate = useNavigate();
   const handleLogOut = async () => {
     try {
@@ -24,24 +25,25 @@ export default function Navbar() {
       {user ? (
         <div>
           <Link to="/account">
-            <button className="text-white pr-4">Account</button>
+            <button className="text-white pr-4">Mi cuenta</button>
           </Link>
 
           <button
             onClick={handleLogOut}
-            className="text-white bg-red-600 px-6 py-2 rounded cursor-pointer">
-            Log out
+            className="text-white bg-red-600 px-6 py-2 rounded cursor-pointer"
+          >
+            Cerrar sesión
           </button>
         </div>
       ) : (
         <div>
           <Link to="/login">
-            <button className="text-white pr-4">Sign In</button>
+            <button className="text-white pr-4">Iniciar sesión</button>
           </Link>
 
           <Link to="/signup">
             <button className="text-white bg-red-600 px-6 py-2 rounded cursor-pointer">
-              Sign Up
+              Crear una cuenta
             </button>
           </Link>
         </div>

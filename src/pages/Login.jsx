@@ -26,11 +26,12 @@ export default function Login() {
         <div className="fixed w-full px-4 py-24 z-50">
           <div className="max-w-[450px] h-[550px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] mx-auto py-16">
-              <h1 className="text-3xl font-bold">Sign In</h1>
+              <h1 className="text-3xl font-bold">Iniciar Sesión</h1>
               {error ? <p className="p-3 mt-4 bg-red-400">{error}</p> : null}
               <form
                 onSubmit={handlesubmit}
-                className="w-full flex flex-col py-4">
+                className="w-full flex flex-col py-4"
+              >
                 <input
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="email"
@@ -46,19 +47,21 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <button className="bg-red-600 py-3 my-6 rounded font-bold">
-                  Sign In
+                  Iniciar Sesión
                 </button>
                 <div className="flex justify-between items-center text-sm text-gray-600">
                   <p>
                     <input className="mr-2" type="checkbox" />
-                    Remember me
+                    Recordarme
                   </p>
-                  <p>Need help?</p>
+                  <p>Nececitas ayuda?</p>
                 </div>
                 <p className="py-8 ">
-                  <span className="text-gray-600 mr-4 ">New to NETFLIX?</span>
+                  <span className="text-gray-600 mr-4 ">
+                    Nuevo/a en NETFLIX?
+                  </span>
                   <Link to="/login" className="cursor-pointer">
-                    Sign Up
+                    Crear una cuenta
                   </Link>
                 </p>
               </form>
