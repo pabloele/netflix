@@ -4,7 +4,9 @@ import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 export default function Movie({ item }) {
+  const navigate = useNavigate();
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
@@ -22,7 +24,8 @@ export default function Movie({ item }) {
         }),
       });
     } else {
-      alert("Por favor inicia sesión para guardar un título");
+      // alert("Por favor inicia sesión para guardar un título");
+      navigate("/login");
     }
   };
   return (
